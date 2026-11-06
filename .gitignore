@@ -1,0 +1,7 @@
+# Logs
+riwayat_kirim.log
+*.log
+
+# Temp files
+*.tmp
+~*

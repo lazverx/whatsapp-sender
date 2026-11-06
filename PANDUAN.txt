@@ -1,0 +1,59 @@
+============================================================
+PANDUAN LENGKAP PENGGUNAAN WHATSAPP AUTO SENDER
+============================================================
+
+Struktur File:
+1. kirim_wa.bat       -> Klik 2x file ini untuk menjalankan program.
+2. kirim_wa.ps1       -> Mesin otomatisasi (jangan diubah kecuali paham koding).
+3. nomor.txt          -> Masukkan daftar nomor HP WhatsApp tujuan & nama di sini.
+4. template_pak.txt   -> Pesan khusus peserta Bapak / Pak (full kata Bapak/Pak).
+5. template_bu.txt    -> Pesan khusus peserta Ibu / Bu (full kata Ibu/Bu).
+6. template.txt       -> Template cadangan jika tidak memakai sistem ganda.
+7. riwayat_kirim.log  -> Catatan riwayat pengiriman otomatis.
+
+------------------------------------------------------------
+CARA KERJA SISTEM DUAL TEMPLATE (PAK & BU):
+------------------------------------------------------------
+- Program otomatis mendeteksi nama di nomor.txt:
+  * Jika nama mengandung "Bu" / "Ibu" (contoh: Bu Indira Untari), program otomatis mengambil template dari template_bu.txt.
+  * Jika nama mengandung "Pak" / "Bapak" (contoh: Pak Edy Kartiono), program otomatis mengambil template dari template_pak.txt.
+- Placeholder yang didukung di dalam template:
+  * [Nama Lengkap] -> otomatis digantikan dengan nama lengkap peserta beserta sapaan (contoh: Pak Edy Kartiono atau Bu Indira Untari).
+  * [nomor]        -> otomatis diganti nomor HP kontak.
+  * Emoji dan baris baru didukung penuh.
+
+------------------------------------------------------------
+CARA PAKAI:
+------------------------------------------------------------
+1. EDIT TEMPLATE PESAN:
+   - Buka "template_pak.txt" untuk menyesuaikan kata-kata untuk Bapak.
+   - Buka "template_bu.txt" untuk menyesuaikan kata-kata untuk Ibu.
+   - Simpan (Ctrl + S).
+
+2. MASUKKAN DAFTAR NOMOR:
+   - Buka file "nomor.txt" dengan Notepad.
+   - Masukkan 1 nomor per baris, contoh:
+       6281347360003, Pak Edy Kartiono
+       6281111837771, Bu Indira Untari
+   - Simpan (Ctrl + S).
+
+3. JALANKAN PROGRAM:
+   - Klik 2x (double-click) pada file "kirim_wa.bat" atau shortcut "jalankan_whatsapp_sender.bat".
+   - Pilih target WhatsApp:
+     [1] WhatsApp Aplikasi Windows (Desktop App) -> Sangat disarankan
+     [2] WhatsApp Web (Buka di browser)
+   - Pilih Mode Pengiriman:
+     [1] Otomatis: Program akan membuka WhatsApp, menunggu beberapa detik
+         sampai kotak chat siap, memfokuskan jendela WhatsApp, lalu menekan ENTER otomatis.
+     [2] Semi-Otomatis: Program akan membuka WhatsApp untuk setiap kontak,
+         Anda bisa cek pesan terlebih dahulu, lalu tekan tombol kirim manual,
+         lalu tekan Enter di terminal untuk lanjut ke nomor berikutnya.
+
+------------------------------------------------------------
+TIPS PENTING AGAR TIDAK TERBLOKIR / AMAN:
+------------------------------------------------------------
+- Program kini dilengkapi sistem RANDOMIZER otomatis (default rentang 5-10 detik)
+  sehingga jeda antar pengiriman tidak berpola kaku dan aman dari deteksi spam WhatsApp.
+- Anda juga dapat mengatur rentang jeda acak sendiri saat program dijalankan.
+- Pastikan WhatsApp Desktop sudah login dan aktif sebelum mulai.
+============================================================
